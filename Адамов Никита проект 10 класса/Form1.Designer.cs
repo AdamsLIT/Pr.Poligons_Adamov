@@ -61,6 +61,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.colorDialog4 = new System.Windows.Forms.ColorDialog();
+            this.colorDialog5 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,20 +132,20 @@
             // triangleToolStripMenuItem
             // 
             this.triangleToolStripMenuItem.Name = "triangleToolStripMenuItem";
-            this.triangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.triangleToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.triangleToolStripMenuItem.Text = "Triangle";
             // 
             // circleToolStripMenuItem
             // 
             this.circleToolStripMenuItem.Name = "circleToolStripMenuItem";
-            this.circleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.circleToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.circleToolStripMenuItem.Text = "Circle";
             this.circleToolStripMenuItem.Click += new System.EventHandler(this.circleToolStripMenuItem_Click);
             // 
             // rectangleToolStripMenuItem
             // 
             this.rectangleToolStripMenuItem.Name = "rectangleToolStripMenuItem";
-            this.rectangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rectangleToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.rectangleToolStripMenuItem.Text = "Rectangle";
             // 
             // schearchForToolStripMenuItem
@@ -166,34 +167,34 @@
             this.dzarvisToolStripMenuItem,
             this.definitionToolStripMenuItem});
             this.qToolStripMenuItem.Name = "qToolStripMenuItem";
-            this.qToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.qToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.qToolStripMenuItem.Text = "Convex_Hull";
             // 
             // dzarvisToolStripMenuItem
             // 
             this.dzarvisToolStripMenuItem.Name = "dzarvisToolStripMenuItem";
-            this.dzarvisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dzarvisToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.dzarvisToolStripMenuItem.Text = "Dzarvis";
             this.dzarvisToolStripMenuItem.Click += new System.EventHandler(this.dzarvisToolStripMenuItem_Click);
             // 
             // definitionToolStripMenuItem
             // 
             this.definitionToolStripMenuItem.Name = "definitionToolStripMenuItem";
-            this.definitionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.definitionToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.definitionToolStripMenuItem.Text = "Definition";
             this.definitionToolStripMenuItem.Click += new System.EventHandler(this.definitionToolStripMenuItem_Click);
             // 
             // sToolStripMenuItem
             // 
             this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.sToolStripMenuItem.Text = "Radius";
             this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
             // 
             // timerTicsToolStripMenuItem
             // 
             this.timerTicsToolStripMenuItem.Name = "timerTicsToolStripMenuItem";
-            this.timerTicsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timerTicsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.timerTicsToolStripMenuItem.Text = "TimerTics";
             this.timerTicsToolStripMenuItem.Click += new System.EventHandler(this.timerTicsToolStripMenuItem_Click);
             // 
@@ -203,7 +204,7 @@
             this.colorOfLineToolStripMenuItem,
             this.colorInsideToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // colorOfLineToolStripMenuItem
@@ -342,6 +343,7 @@
         private System.Windows.Forms.Button button4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ColorDialog colorDialog4;
+        private System.Windows.Forms.ColorDialog colorDialog5;
     }
 }
 

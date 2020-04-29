@@ -101,6 +101,7 @@ namespace Адамов_Никита_проект_10_класса
                 else if (Convex_hull_Type == 2)
                     Convex_hull_by_Definition(e.Graphics);///////////////////////////////////////////////////////
                 ///////////////////////////////////////////////////////
+                
             }
 
             foreach (Shape Object in shapes)
@@ -203,6 +204,8 @@ namespace Адамов_Никита_проект_10_класса
             if (Peredviz.Count != 0)
             {
                 UnDo_Stack.Push(Peredviz);
+                ReDo_Stack.Clear();
+                button4.Enabled = false;
             }
             // Convex_hull.Delete_Points(shapes);
             if (shapes.Count > 2)
@@ -213,6 +216,8 @@ namespace Адамов_Никита_проект_10_класса
                         UnDo_Stack.Peek().Insert(0, new DeleteShape(shapes[i], i));
                         shapes.RemoveAt(i);
                         i--;
+                        ReDo_Stack.Clear();
+                        button4.Enabled = false;
                     }
                 }
             ToMoveSmth = false;
@@ -227,8 +232,11 @@ namespace Адамов_Никита_проект_10_класса
                 {
                     Object.X1 = e.X - Object.MouseX1;
                     Object.Y1 = e.Y - Object.MouseY1;
+                    button4.Enabled = false;//////////////////////
+                    ReDo_Stack.Clear();///////////////////////////////////////
                 }
             }
+
             Refresh();
         }
 
@@ -236,11 +244,15 @@ namespace Адамов_Никита_проект_10_класса
 
         private void shapeToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-           
-                
-                    UnDo_Stack.Push(new List<IAction>() { new Figure_Choosen(ShapeType, (Type)e.ClickedItem.Tag) });
-                    ShapeType = (Type)e.ClickedItem.Tag;
-                    save = false;     
+
+            if (ShapeType != (Type)e.ClickedItem.Tag)
+            {
+                UnDo_Stack.Push(new List<IAction>() { new Figure_Choosen(ShapeType, (Type)e.ClickedItem.Tag) });
+                ShapeType = (Type)e.ClickedItem.Tag;
+                save = false;
+                button4.Enabled = false;//////////////////////
+                ReDo_Stack.Clear();///////////////////////////////////////
+            }
         }
 
 
@@ -395,10 +407,13 @@ namespace Адамов_Никита_проект_10_класса
 
         private void Form2_OnRadiuschanged(object sender, RadiusEventArgs e)
         {
-
-            Shape.Radius = e.radius;
-            save = false;
-            Refresh();
+            if (Shape.Radius != e.radius)
+            {
+                Shape.Radius = e.radius;
+                save = false;
+                
+                Refresh();
+            }
 
 
         }
@@ -415,6 +430,7 @@ namespace Адамов_Никита_проект_10_класса
         {
             TicsInterval = e.TimerTics;
             save = false;
+
             Refresh();
         }
 
@@ -477,6 +493,8 @@ namespace Адамов_Никита_проект_10_класса
         private void Form2_OnRadiudEndChanging(object sender, RadiusChangingEventArgs e)
         {
             UnDo_Stack.Push(new List<IAction>() { new Radius_changes(-e.radius_Old + e.radius_New) });
+            button4.Enabled = false;//////////////////////
+            ReDo_Stack.Clear();///////////////////////////////////////
             Refresh();
 
         }
@@ -500,6 +518,8 @@ namespace Адамов_Никита_проект_10_класса
                 if (Shape.Color_of_figure != colorDialog1.Color)
                 {
                     UnDo_Stack.Push(new List<IAction>() { new Color_changes_figures(colorDialog1.Color, Shape.Color_of_figure) });
+                    button4.Enabled = false;//////////////////////
+                    ReDo_Stack.Clear();///////////////////////////////////////
                 }
                 Shape.Color_of_figure = colorDialog1.Color;
                 Refresh();
@@ -673,6 +693,8 @@ namespace Адамов_Никита_проект_10_класса
                 if (ColorInside != colorDialog1.Color)
                 {
                     UnDo_Stack.Push(new List<IAction>() { new Color_changes_hull(colorDialog1.Color, ColorInside) });
+                    button4.Enabled = false;//////////////////////
+                    ReDo_Stack.Clear();///////////////////////////////////////
                 }
                 ColorInside = colorDialog1.Color;
                 Refresh();
